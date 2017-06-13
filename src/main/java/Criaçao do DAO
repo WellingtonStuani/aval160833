@@ -1,0 +1,12 @@
+create database cadastroProduto
+
+CREATE TABLE Produto (
+  idProduto INTEGER  NOT NULL,
+  descricao VARCHAR(255) NULL,
+  Qauntidade INTEGER  NULL,
+  PRIMARY KEY(idProduto)
+);
+
+
+insert into produto (idProduto,descricao,qauntidade) values (1,'banana',30)
+
