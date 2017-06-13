@@ -7,6 +7,8 @@ import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Painel extends JPanel {
 	private JTextField textField_1;
@@ -18,10 +20,10 @@ public class Painel extends JPanel {
 	 */
 	public Painel() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, 1.0, 1.0, 0.0, 1.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		JLabel lblId = new JLabel("Id:");
@@ -34,8 +36,8 @@ public class Painel extends JPanel {
 		
 		textField = new JTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.gridwidth = 5;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
+		gbc_textField.gridwidth = 7;
+		gbc_textField.insets = new Insets(0, 0, 5, 0);
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField.gridx = 1;
 		gbc_textField.gridy = 0;
@@ -52,8 +54,8 @@ public class Painel extends JPanel {
 		
 		textField_1 = new JTextField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.gridwidth = 5;
-		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_1.gridwidth = 7;
+		gbc_textField_1.insets = new Insets(0, 0, 5, 0);
 		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_1.gridx = 1;
 		gbc_textField_1.gridy = 1;
@@ -63,20 +65,45 @@ public class Painel extends JPanel {
 		JLabel lblQuantidade = new JLabel("Quantidade:");
 		GridBagConstraints gbc_lblQuantidade = new GridBagConstraints();
 		gbc_lblQuantidade.anchor = GridBagConstraints.EAST;
-		gbc_lblQuantidade.insets = new Insets(0, 0, 0, 5);
+		gbc_lblQuantidade.insets = new Insets(0, 0, 5, 5);
 		gbc_lblQuantidade.gridx = 0;
 		gbc_lblQuantidade.gridy = 2;
 		add(lblQuantidade, gbc_lblQuantidade);
 		
 		textField_2 = new JTextField();
 		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
-		gbc_textField_2.gridwidth = 5;
-		gbc_textField_2.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_2.insets = new Insets(0, 0, 5, 0);
+		gbc_textField_2.gridwidth = 7;
 		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_2.gridx = 1;
 		gbc_textField_2.gridy = 2;
 		add(textField_2, gbc_textField_2);
 		textField_2.setColumns(10);
+		
+		JButton btnImprimir = new JButton("impremir");
+		btnImprimir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		GridBagConstraints gbc_btnImprimir = new GridBagConstraints();
+		gbc_btnImprimir.insets = new Insets(0, 0, 0, 5);
+		gbc_btnImprimir.gridx = 4;
+		gbc_btnImprimir.gridy = 3;
+		add(btnImprimir, gbc_btnImprimir);
+		
+		JButton btnSalvar = new JButton("Salvar");
+		GridBagConstraints gbc_btnSalvar = new GridBagConstraints();
+		gbc_btnSalvar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnSalvar.gridx = 5;
+		gbc_btnSalvar.gridy = 3;
+		add(btnSalvar, gbc_btnSalvar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		GridBagConstraints gbc_btnExcluir = new GridBagConstraints();
+		gbc_btnExcluir.insets = new Insets(0, 0, 0, 5);
+		gbc_btnExcluir.gridx = 6;
+		gbc_btnExcluir.gridy = 3;
+		add(btnExcluir, gbc_btnExcluir);
 
 	}
 
